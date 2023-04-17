@@ -12,7 +12,7 @@ Grace Podgurski
 
 ## Project Description
 
-<< Give an overview of your project >>
+My project will be a flight simulator game - starting in 2D above view but may try to develop it into a pilot POV. Goal will be to fly across the Atlantic Ocean as Amelia Earhart while avoiding obstacles including clouds, other aircrafts, and whatever else I can come up with.
 
 ***    
 
@@ -30,11 +30,11 @@ Grace Podgurski
 
 ### Features
 
-1. << Feature 1 >>
-2. << Feature 2 >>
-3. << Feature 3 >>
-4. << Feature 4 >>
-5. << Feature 5 >>
+1. Start Menu
+2. Moveable character (plane/pilot)
+3. Obstacle Collision (clouds/other aircrafts)
+4. Moving background as you play
+5. Game Over screen with win or lose message
 
 ### Classes
 
