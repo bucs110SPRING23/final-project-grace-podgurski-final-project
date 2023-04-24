@@ -1,3 +1,7 @@
+import pygame
+import pygame_menu
+
+
 
 class Controller:
   
@@ -6,7 +10,7 @@ class Controller:
     
   def mainloop(self):
     #select state loop
-    
+    pygame.init
   
   ### below are some sample loop states ###
 
