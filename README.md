@@ -38,7 +38,14 @@ My project will be a flight simulator game - starting in 2D above view but may t
 
 ### Classes
 
-- << You should have a list of each of your classes with a description >>
+Character - called  Pilot
+- shape & size
+-  score
+- movement (update position)
+
+Obstacles
+- shape & size
+- where on screen (make random)
 
 ## ATP
 
