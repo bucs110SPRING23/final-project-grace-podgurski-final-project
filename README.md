@@ -37,15 +37,21 @@ My project will be a flight simulator game - starting in 2D above view but may t
 5. Game Over screen with win or lose message
 
 ### Classes
+StartView 
+- use pygame menu
 
 Character - called  Pilot
 - shape & size
 -  score
-- movement (update position)
+- movement (update position) - done in controller?
 
 Obstacles
 - shape & size
 - where on screen (make random)
+
+EndView 
+- ends when player hits an obstacle or reaches distance of atlantic ocean 
+- displays the 
 
 ## ATP
 
