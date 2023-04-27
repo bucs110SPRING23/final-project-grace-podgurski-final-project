@@ -1,5 +1,3 @@
-
-
 class Pilot:
   starting_score = 0
   starting_point = int[0,0]
