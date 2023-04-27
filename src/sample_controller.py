@@ -15,11 +15,6 @@ class Controller:
     self.width = size[0]
     self.height = size[1]
 
-  def mainloop(self):
-    #select state loop
-
-  
-  ### below are some sample loop states ###
 
   def menuloop(self):
     
