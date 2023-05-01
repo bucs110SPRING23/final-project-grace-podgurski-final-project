@@ -1,11 +1,12 @@
 import pygame
+import arcade
 import pygame_menu
 
 from src.pilot import Pilot
 
 class Controller:
   
-  def __init__(self):
+  def __init__(self,width,height):
     #setup pygame data
     pygame.init()
 
@@ -15,6 +16,8 @@ class Controller:
     self.width = size[0]
     self.height = size[1]
 
+    arcade.open_window(self.width,self.height)
+    arcade.set_background_color(arcade.color.BLUE)
 
   def menuloop(self):
     pass
