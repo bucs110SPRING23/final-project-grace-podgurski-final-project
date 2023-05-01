@@ -8,8 +8,6 @@ class Controller:
   
   def __init__(self,width,height):
     #setup pygame data
-    pygame.init()
-
     self.screen = pygame.display.set_mode()
     size = pygame.display.get_window_size()
 
