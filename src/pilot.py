@@ -1,3 +1,5 @@
+import pygame
+
 class Pilot:
   starting_score = 0
   starting_point = int[0,0]
@@ -17,9 +19,23 @@ class Pilot:
         self.x += 1
 
   def move_up(self):
-     pass
+    #  pressing up arrow makes you move up at a 45 degree angle
+    for event in pygame.event.get():
+      if event.type == pygame.KEYDOWN:
+        if event.key == pygame.K_UP:
+          print("up")
+        if event.key == pygame.K_DOWN:
+           print("Down")
+        
+      if event.type == pygame.KEYUP:
+        if event.key == pygame.K_UP:
+          print("Up STOP")
+        if event.key == pygame.K_DOWN:
+           print("Down STOP")
+     
   
   def move_down(self):
+    #  pressing down arrow makes you move down at a 45 degree angle
      pass
   
   
