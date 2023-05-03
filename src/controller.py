@@ -14,21 +14,26 @@ class Controller:
     self.width = size[0]
     self.height = size[1]
 
-    arcade.open_window(self.width,self.height)
-    arcade.set_background_color(arcade.color.BLUE)
-
 
   def menuloop(self):
-    pass
-      #event loop
+    arcade.open_window(self.width,self.height)
+    background = arcade.set_background_color(arcade.color.BLUE)
+    
+    while True:
+      for event in pygame.event.get():
+        if event.type == QUIT:
+          pygame.quit()
 
-      #update data
+      screen.blit(background, (0,0))
+      pygame.display.update()
 
-      #redraw
+
+
 
   def gameloop(self):
     speed = 5
 
+    
 
       #event loop
 
