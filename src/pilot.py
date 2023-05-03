@@ -14,8 +14,7 @@ class Pilot(arcade.Sprite):
 ### Update position of the player - always moving right with time
 
   def update_pos(self):
-    self.x += self.change_x
-    self.y += self.change_y
+    self.rect =+ 1
 
 # To check that the player is in the screen
     if self.left < 0:

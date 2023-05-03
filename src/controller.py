@@ -16,9 +16,20 @@ class Controller:
 
 
   def menuloop(self):
+    menu = pygame_menu.Menu('Welcome', 400, 300,
+                       theme=pygame_menu.themes.THEME_BLUE)
+
+    menu.add.text_input('Amelia Earhart Flight Simulator Game')
+    menu.add.button('Play', gameloop)
+    menu.add.button('Quit', pygame_menu.events.EXIT)
+
+
+  def gameloop(self):
+    
+    speed = 5
     arcade.open_window(self.width,self.height)
     background = arcade.set_background_color(arcade.color.BLUE)
-    
+
     while True:
       for event in pygame.event.get():
         if event.type == QUIT:
@@ -28,10 +39,9 @@ class Controller:
       pygame.display.update()
 
 
+    Pilot.move()
 
 
-  def gameloop(self):
-    speed = 5
 
     
 
