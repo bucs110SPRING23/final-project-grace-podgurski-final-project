@@ -17,22 +17,19 @@ class Controller:
     arcade.open_window(self.width,self.height)
     arcade.set_background_color(arcade.color.BLUE)
 
+
   def menuloop(self):
-        super().__init__(width, height, title)
-
-        # Variables that will hold sprite lists
-        self.player_list = None
-
-        # Set up the player info
-        self.player_sprite = None
+    pass
       #event loop
 
       #update data
 
       #redraw
-      
+
   def gameloop(self):
-    pass
+    speed = 5
+
+
       #event loop
 
       #update data
