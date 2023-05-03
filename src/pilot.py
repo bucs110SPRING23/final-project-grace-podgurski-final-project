@@ -1,25 +1,36 @@
 import pygame
+import arcade
+import controller
 
 class Pilot:
   starting_score = 0
   starting_point = int[0,0]
 
-  def __init__(self,x,y,shape,size,color):
+  def __init__(self,x,y,shape):
     self.x = x
     self.y = y
-    self.shape = shape
-    self.size = size
-    self.direction = "right"
-    self.color = color
+    self.shape = arcade.Sprite(":assets/plane_image.png")
 
-  def move_right(self):
-    if self.direction == "right":
-        self.x -= 1
-    else:
-        self.x += 1
+### Update position of the player - always moving right with time
 
-  def move_up(self):
-    #  pressing up arrow makes you move up at a 45 degree angle
+  def update_pos(self):
+    self.x += self.change_x
+    self.y += self.change_y
+
+# To check that the player is in the screen
+    if self.left < 0:
+        self.left = 0
+    elif self.right > controller.width - 1:
+        self.right = controller.width - 1
+
+    if self.bottom < 0:
+        self.bottom = 0
+    elif self.top > controller.height - 1:
+        self.top = controller.height - 1
+
+  def move(self):
+    # pressing arrow makes you move at a 45 degree angle in that direction
+    # In testing phase right now but will be updated later
     for event in pygame.event.get():
       if event.type == pygame.KEYDOWN:
         if event.key == pygame.K_UP:
@@ -33,9 +44,5 @@ class Pilot:
         if event.key == pygame.K_DOWN:
            print("Down STOP")
      
-  
-  def move_down(self):
-    #  pressing down arrow makes you move down at a 45 degree angle
-     pass
   
   

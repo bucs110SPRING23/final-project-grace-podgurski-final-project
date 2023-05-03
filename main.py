@@ -1,14 +1,14 @@
 import pygame
+import arcade
+import pygame_menu
 import controller
-#import your controller
+import pilot
 
 def main():
     pygame.init()
-    controller.Controller()
-    
-    #Create an instance on your controller object
-    #Call your mainloop
-    
+    game = controller.Controller()
+    game.mainloop()
+
     ###### NOTHING ELSE SHOULD GO IN main(), JUST THE ABOVE 3 LINES OF CODE ######
 
 # https://codefather.tech/blog/if-name-main-python/
