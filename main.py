@@ -1,12 +1,14 @@
 import pygame
 import arcade
 import pygame_menu
+import math
 import controller
 import pilot
 
 def main():
     pygame.init()
     game = controller.Controller()
+    game.menuloop()
     game.mainloop()
 
     ###### NOTHING ELSE SHOULD GO IN main(), JUST THE ABOVE 3 LINES OF CODE ######

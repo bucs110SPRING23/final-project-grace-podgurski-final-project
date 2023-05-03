@@ -1,6 +1,7 @@
 import pygame
 import arcade
 import controller
+import math
 
 class Pilot(arcade.Sprite):
   starting_point = int[50,50]
@@ -28,20 +29,23 @@ class Pilot(arcade.Sprite):
         self.top = controller.height - 1
 
   def move(self):
+    turning = 45 #degrees
     # pressing arrow makes you move at a 45 degree angle in that direction
     # In testing phase right now but will be updated later
     for event in pygame.event.get():
       if event.type == pygame.KEYDOWN:
         if event.key == pygame.K_UP:
-          print("up")
+          Pilot.move.up = True
+          Pilot.move.down = False
         if event.key == pygame.K_DOWN:
-           print("Down")
+          Pilot.move.up = False
+          Pilot.move.down = True
         
       if event.type == pygame.KEYUP:
         if event.key == pygame.K_UP:
-          print("Up STOP")
+          Pilot.update_pos()
         if event.key == pygame.K_DOWN:
-           print("Down STOP")
+          Pilot.update_pos()
      
   
   
