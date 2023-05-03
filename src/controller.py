@@ -18,7 +18,13 @@ class Controller:
     arcade.set_background_color(arcade.color.BLUE)
 
   def menuloop(self):
-    pass
+        super().__init__(width, height, title)
+
+        # Variables that will hold sprite lists
+        self.player_list = None
+
+        # Set up the player info
+        self.player_sprite = None
       #event loop
 
       #update data
