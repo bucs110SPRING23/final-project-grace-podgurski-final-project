@@ -2,14 +2,14 @@ import pygame
 import arcade
 import controller
 
-class Pilot:
-  starting_score = 0
-  starting_point = int[0,0]
+class Pilot(arcade.Sprite):
+  starting_point = int[50,50]
+  scale = 0.5
 
   def __init__(self,x,y,shape):
     self.x = x
     self.y = y
-    self.shape = arcade.Sprite(":assets/plane_image.png")
+    self.shape = Pilot(":assets/plane_image.png", 0.5)
 
 ### Update position of the player - always moving right with time
 
