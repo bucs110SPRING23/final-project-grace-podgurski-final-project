@@ -25,7 +25,7 @@ class Controller:
     menu = pygame_menu.Menu('Welcome', 400, 300,theme=pygame_menu.themes.THEME_BLUE)
 
     menu.add.text_input('Amelia Earhart Flight Simulator Game')
-    menu.add.button('Play', gameloop)
+    menu.add.button('Play', Controller.gameloop())
     menu.add.button('Quit', pygame_menu.events.EXIT)
 
 
