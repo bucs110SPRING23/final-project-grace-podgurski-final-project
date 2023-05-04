@@ -3,6 +3,7 @@ import arcade
 import pygame_menu
 
 from src.pilot import Pilot
+from src.obstacles import Obstacles
 
 class Controller:
   
@@ -39,7 +40,7 @@ class Controller:
     while self.state == "GAME":
 
         for event in pygame.event.get():
-            if self.ball.rect.collidepoint(event.pos):
+            if self.obstacles.rect.collidepoint(event.pos):
                 pygame.quit()
                 exit()
 
