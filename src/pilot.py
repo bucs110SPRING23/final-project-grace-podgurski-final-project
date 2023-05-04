@@ -1,6 +1,5 @@
 import pygame
 import arcade
-import controller
 import math
 
 class Pilot(arcade.Sprite):
@@ -19,8 +18,10 @@ class Pilot(arcade.Sprite):
 
   def update_pos(self):
     distance = [0]
-    self.rect =+ 1
-
+    speed = 10
+    self.right(speed)
+    distance = distance + speed
+    
 # To check that the player is in the screen
     if self.left < 0:
         self.left = 0
@@ -32,10 +33,7 @@ class Pilot(arcade.Sprite):
     elif self.top > controller.height - 1:
         self.top = controller.height - 1
 
-  def move(self):
-    turning = 45 #degrees
-    # pressing arrow makes you move at a 45 degree angle in that direction
-    # In testing phase right now but will be updated later
+  def move(self,speed):
     for event in pygame.event.get():
       if event.type == pygame.KEYDOWN:
         if event.key == pygame.K_UP:

@@ -7,7 +7,7 @@ from src.obstacles import Obstacles
 
 class Controller:
   
-  def __init__(self,width,height):
+  def __init__(self,screen,width,height):
     #setup pygame data
     self.screen = pygame.display.set_mode()
     size = pygame.display.get_window_size()
@@ -28,30 +28,29 @@ class Controller:
     menu.add.button('Quit', pygame_menu.events.EXIT)
 
 
-  def gameloop(self):
-    
-    speed = 5
-    speedx =  100
-    speedy = 120
+  def gameloop(self,result):
     arcade.open_window(self.width,self.height)
     background = arcade.set_background_color(arcade.color.BLUE)
 
 
     while self.state == "GAME":
+      result = "null"
+      hit = pygame.sprite.spritecollide(Pilot,Obstacles)
+    
+      for event in pygame.event.get():
+        if hit == True:
+          result = "loss"
+          Controller.gameoverloop()
+          
 
-        for event in pygame.event.get():
-            if self.obstacles.rect.collidepoint(event.pos):
-                pygame.quit()
-                exit()
-
-        self.sprites.update()
+          self.sprites.update()
     # while True:
     #   for event in pygame.event.get():
     #     if event.type == QUIT:
     #       pygame.quit()
     #       gameoverloop()
     #     elif event.type = 
-
+      return result
 
 
 
@@ -75,8 +74,21 @@ class Controller:
     # End the program when distance = 5000 (representing approximately 5000 miles of the Atlantic Ocean)
 
     
-  def gameoverloop(self):
-    for event in pygame.event.get():
+  def gameoverloop(self, win, loss):
+    for _ in Controller.gameloop(result):
+      if result == "loss":
+        disp = pygame.image.load("/Users/gracepodgurski/Documents/GitHub/final-project-grace-podgurski-final-project/assets/loss_screen.png")
+        Controller.screen.blit(disp,(0,0))
+        pygame.display.update()
+        pygame.quit()
+      elif result == "win":
+        disp = pygame.image.load("/Users/gracepodgurski/Documents/GitHub/final-project-grace-podgurski-final-project/assets/win_screen.png")
+        Controller.screen.blit(disp,(0,0))
+        pygame.display.update()
+        pygame.quit()
+
+          
+          
 
       #event loop
 
