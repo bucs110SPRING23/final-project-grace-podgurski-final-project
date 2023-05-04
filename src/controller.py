@@ -16,9 +16,7 @@ class Controller:
     self.width = size[0]
     self.height = size[1]
 
-    distance = [0]
-
-    return screen, width, height, distance
+    return screen, width, height
 
 
   def menuloop(self):
@@ -37,6 +35,15 @@ class Controller:
     arcade.open_window(self.width,self.height)
     background = arcade.set_background_color(arcade.color.BLUE)
 
+
+    while self.state == "GAME":
+
+        for event in pygame.event.get():
+            if self.ball.rect.collidepoint(event.pos):
+                pygame.quit()
+                exit()
+
+        self.sprites.update()
     # while True:
     #   for event in pygame.event.get():
     #     if event.type == QUIT:
