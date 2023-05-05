@@ -36,46 +36,42 @@ class Controller:
     while self.state == "GAME":
       result = "null"
       hit = pygame.sprite.spritecollide(Pilot,Obstacles)
+      avoiding = 3
+
+      # To check that the player is in the screen
+      if self.left < 0:
+          self.left = 0
+      elif self.right > Controller.width - 1:
+          self.right = Controller.width - 1
+
+      if self.bottom < 0:
+          self.bottom = 0
+      elif self.top > Controller.height - 1:
+          self.top = Controller.height - 1
+
+    # Check if distance is reached
+      if Pilot.distance < 1700:
+        Pilot.update_pos()
+      elif Pilot.distance >= 1700:
+        Controller.gameoverloop(result="win")
     
       for event in pygame.event.get():
-        if hit == True:
+        if Pilot.move.up == True:
+          Pilot.control(0, avoiding)
+        elif Pilot.move.down == True:
+          Pilot.control(0, -avoiding)
+        elif hit == True:
           result = "loss"
-          Controller.gameoverloop()
-          
+          Controller.gameoverloop(result = "loss")
 
           self.sprites.update()
-    # while True:
-    #   for event in pygame.event.get():
-    #     if event.type == QUIT:
-    #       pygame.quit()
-    #       gameoverloop()
-    #     elif event.type = 
-      return result
-
-
-
-    pygame.display.update()
-
-
-    Pilot.move()
-
-      #event loop
-
-      #update data - add 100 miles each frame 
-      
-
-      #redraw
-    # for event in pygame.event.get():
-    #   if collision 
-    #     result = loss
-    #    elif distance = 5000
-    #      result = win
-          
-    # End the program when distance = 5000 (representing approximately 5000 miles of the Atlantic Ocean)
+          pygame.display.update()
+    return result
 
     
+    
   def gameoverloop(self, win, loss):
-    for _ in Controller.gameloop(result):
+    for _ in Controller.gameloop():
       if result == "loss":
         disp = pygame.image.load("/Users/gracepodgurski/Documents/GitHub/final-project-grace-podgurski-final-project/assets/loss_screen.png")
         Controller.screen.blit(disp,(0,0))
@@ -86,12 +82,3 @@ class Controller:
         Controller.screen.blit(disp,(0,0))
         pygame.display.update()
         pygame.quit()
-
-          
-          
-
-      #event loop
-
-      #update data
-
-      #redraw

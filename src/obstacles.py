@@ -11,13 +11,5 @@ class Obstacles(pygame.sprite.Sprite):
         self.rect.y = y
 
     def floating(self):
-        
-
-# add in sprite groups  in controller using:
-# starting_clouds = 2
-# interval = self.width/(starting_clouds+1)
-# xpos = interval
-# for _ in range(starting_clouds):
-#     new_sm = Snowman(xpos, self.height/2)
-#     self.clouds.add(new_sm)
-#     xpos += interval
+        speed_cloud = 5
+        self.left(speed_cloud)

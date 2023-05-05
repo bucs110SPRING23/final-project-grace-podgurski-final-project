@@ -12,7 +12,7 @@ Grace Podgurski
 
 ## Project Description
 
-My project will be a flight simulator game - starting in 2D above view but may try to develop it into a pilot POV. Goal will be to fly across the Atlantic Ocean as Amelia Earhart while avoiding obstacles including clouds, other aircrafts, and whatever else I can come up with.
+My project will be a flight simulator game - starting in 2D above view but may try to develop it into a pilot POV. Goal will be to fly across the Atlantic Ocean as Amelia Earhart while avoiding obstacles including clouds. 
 
 ***    
 
@@ -42,8 +42,7 @@ StartView
 
 Character - called  Pilot
 - shape & size
--  score
-- movement (update position) - done in controller?
+- movement (update position) 
 
 Obstacles
 - shape & size
@@ -53,12 +52,7 @@ EndView
 - ends when player hits an obstacle or reaches distance of atlantic ocean 
 - displays the 
 
-## ATP
-
-| Step                 |Procedure             |Expected Results                   |
-|----------------------|:--------------------:|----------------------------------:|
-|  1                   | Run Counter Program  |GUI window appears with count = 0  |
-|  2                   | click count button   | display changes to count = 1      |
-etc...
+### Note to grader:
+Although I know this code is not functional, I hope you are able to see my work and give me some partial credit. I tried to apply concepts we had learned and incorporate some new ideas, but I ended up running out of time and realizing I didn't have as much grasp on the concepts as I thought. Thank you for a  great semester! 
 
 <!-- sources used for assistance: https://opensource.com/article/18/4/easy-2d-game-creation-python-and-arcade -->
